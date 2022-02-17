@@ -16,12 +16,17 @@ func main() {
 	fmt.Println("this is string : ", strVar)
 	fmt.Println("this is string.leng : ", len(strVar))
 
+	var strVar2 = "newStr"
+	fmt.Println("Var no type set : ", strVar2)
+
+	strVar3 := "newStr"
+	fmt.Println("Shortest str def : ", strVar3)
+
 	var boolVar bool
 	boolVar = true
 	fmt.Println(boolVar)
 
 	fmt.Println(strVarGlob)
-
 	strVar += strVarGlob
 	fmt.Println(strVar)
 
