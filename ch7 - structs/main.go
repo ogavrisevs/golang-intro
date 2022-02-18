@@ -7,12 +7,23 @@ type Person struct {
 	surname string
 }
 
+type Group struct {
+	name    string
+	persons [3]Person
+}
+
+func (p Person) printNameNice() {
+	fmt.Println("-=", p.name, "=-")
+}
+
 func main() {
 	fmt.Println("Ch7")
 
 	nullPointer()
 	simpleObj()
 	directObj()
+	objMethod()
+	embeddedObj()
 }
 
 func nullPointer() {
@@ -44,4 +55,23 @@ func directObj() {
 
 	p2 := Person{name: "Kuza", surname: "Murza"}
 	fmt.Println(&p2)
+}
+
+func objMethod() {
+	fmt.Println("objMethod")
+	p := Person{name: "Vasa", surname: "Pupkin"}
+	p.printNameNice()
+
+}
+
+func embeddedObj() {
+	fmt.Println("embeddedObj")
+	p1 := Person{name: "Kuza", surname: "Murza"}
+	p2 := Person{name: "Katja", surname: "Batja"}
+
+	gr1 := Group{name: "first class"}
+	gr1.persons[0] = p1
+	gr1.persons[1] = p2
+
+	fmt.Println(gr1)
 }
